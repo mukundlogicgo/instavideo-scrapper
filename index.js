@@ -11,7 +11,7 @@ import express from "express";
 const app = express();
 app.use(cors());
 
-app.use("/", async (req, res) => {
+app.get("/", async (req, res) => {
   const { url } = req.query;
 
   const videos = await getVideos(url);
@@ -20,5 +20,5 @@ app.use("/", async (req, res) => {
   return res.status(200).json(videos);
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => console.log(`Server is running on ${PORT}`));
