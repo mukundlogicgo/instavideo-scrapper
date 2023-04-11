@@ -6,12 +6,12 @@ export const getVideos = async (url) => {
     return [];
   }
 
-  //   const browser = await puppeteer.launch({
-  //     executablePath: "/usr/bin/chromium-browser",
-  //   });
+  const browser = await puppeteer.launch({
+    executablePath: "/usr/bin/chromium-browser",
+  });
 
   console.log("[INFO] Launching browser");
-  const browser = await puppeteer.launch();
+  // const browser = await puppeteer.launch();
 
   console.log("[INFO] Creating new page");
   const page = await browser.newPage();
